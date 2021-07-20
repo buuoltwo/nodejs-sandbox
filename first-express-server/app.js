@@ -3,7 +3,7 @@
  * @Author       : zhangming
  * @Date         : 2021-07-17 10:56:45
  * @LastEditors  : zhangming
- * @LastEditTime : 2021-07-17 11:48:50
+ * @LastEditTime : 2021-07-20 19:28:01
  */
 var createError = require('http-errors');
 var express = require('express');
@@ -19,7 +19,7 @@ const server = http.createServer();
 server.listen(5000);
 
 var app = express();
-
+ 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
