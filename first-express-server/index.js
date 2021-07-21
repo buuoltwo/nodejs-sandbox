@@ -3,11 +3,20 @@
  * @Author       : zhangming
  * @Date         : 2021-07-20 09:51:43
  * @LastEditors  : zhangming
- * @LastEditTime : 2021-07-20 12:17:55
+ * @LastEditTime : 2021-07-21 10:07:53
  */
 var express = require('express');
+var bp = require('body-parser');
 const http = require('http')
 const app = express()
+
+// body-parser
+// app.use(bp.json())
+app.use(bp.urlencoded())
+app.use((req,res,next)=>{
+	console.log(req.body) 
+	res.end()
+})
 
 //鉴权 -> 守卫
 function auth(req,res,next) {
@@ -42,4 +51,4 @@ app.use((err, req, res, next)=>{
 })
 
 const server = http.createServer(app)
-server.listen('8888')
+server.listen('8848')
